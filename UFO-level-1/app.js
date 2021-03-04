@@ -1,6 +1,19 @@
 // from data.js
 var tableData = data;
 
+function handleSubmit() {
+    // Prevent the page from refreshing
+    d3.event.preventDefault();
+    var stock = d3.select("#stockInput").node().value;
+  console.log(stock);
+
+  // clear the input value
+  d3.select("#stockInput").node().value = "";
+
+  // Build the plot with the new stock
+  buildPlot(stock);
+}
+
 function unpack(rows, index) {
     return rows.map(function(row) {
       return row[index];
