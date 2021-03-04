@@ -3,12 +3,16 @@ var tableData = data;
 var button = d3.select("#filter-btn");
 var inputField = d3.select("#datetime");
 var tbody = d3.select("tbody");
+var titles = filteredMovies.map(movies =>  movies.title);
+var ratings = filteredMovies.map(movies => movies.metascore);
+reversedData = tabledata.map(object => object.greekSearchResults);
+reversedData.map(object => object.greekSearchResults)
 
 function init() {
 
-    data.forEach((weatherReport) => {
+    data.forEach((UFOreport) => {
         var row = tbody.append("tr");
-        Object.entries(weatherReport).forEach(([key, value]) => {
+        Object.entries(UFOreport).forEach(([key, value]) => {
         var cell = row.append("td");
         cell.text(value);
         });
@@ -16,21 +20,21 @@ function init() {
 }
 
 
-function unpack(rows, index) {
-    return rows.map(function(row) {
-      return row[index];
-    });
-  }
+// function unpack(rows, index) {
+//     return rows.map(function(row) {
+//       return row[index];
+//     });
+//   }
 
 
   
   // This function is triggered when the button is clicked
-  function handleClick() {
+function handleClick() {
     console.log("A button was clicked!");
-  
+
     // We can use d3 to see the object that dispatched the event
     console.log(d3.event.target);
-  }
+}
   
   // We can use the `on` function in d3 to attach an event to the handler function
   button.on("click", handleClick);
@@ -40,7 +44,7 @@ function unpack(rows, index) {
     console.log("Hi, a button was clicked!");
     console.log(d3.event.target);
   });
-  
+}
   // Event handlers are just normal functions that can do anything you want
   button.on("click", function() {
     d3.select(".giphy-me").html("<img src='https://gph.to/2Krfn0w' alt='giphy'>");
@@ -51,21 +55,6 @@ function unpack(rows, index) {
     var newText = d3.event.target.value;
     console.log(newText);
   });
-
-  var titles = filteredMovies.map(movies =>  movies.title);
-
-  //  Check your filtered movie titles
-  console.log(titles);
-  
-  // 4. Use the map method with the arrow function to return all the filtered movie metascores.
-  var ratings = filteredMovies.map(movies => movies.metascore);
-  
-  //  Check your filtered metascores.
-  console.log(ratings);
-
-reversedData = tabledata.map(object => object.greekSearchResults);
-reversedData.map(object => object.greekSearchResults)
-
 
 
 function filterDate(date) {
