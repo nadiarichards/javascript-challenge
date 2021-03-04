@@ -3,7 +3,17 @@ var tableData = data;
 var button = d3.select("#filter-btn");
 var inputField = d3.select("#datetime");
 var tbody = d3.select("tbody");
-var titles = filteredMovies.map(movies =>  movies.title);
+var date = tableData.map(ufo =>  ufo.datetime);
+var city = tableData.map(ufo =>  ufo.city);
+var state = tableData.map(ufo =>  ufo.state);
+var country = tableData.map(ufo =>  ufo.country);
+var shape = tableData.map(ufo =>  ufo.shape);
+var duration = tableData.map(ufo =>  ufo.ddurationMinutes);
+var comments = tableData.map(ufo =>  ufo.comments);
+
+console.log(comments);
+
+
 var ratings = filteredMovies.map(movies => movies.metascore);
 reversedData = tabledata.map(object => object.greekSearchResults);
 reversedData.map(object => object.greekSearchResults)
