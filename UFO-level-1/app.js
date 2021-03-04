@@ -1,5 +1,7 @@
 // from data.js
 var tableData = data;
+var button = d3.select("#click-me");
+var inputField = d3.select("#input-field");
 
 function unpack(rows, index) {
     return rows.map(function(row) {
@@ -7,12 +9,64 @@ function unpack(rows, index) {
     });
   }
 
+
+  
+  // This function is triggered when the button is clicked
+  function handleClick() {
+    console.log("A button was clicked!");
+  
+    // We can use d3 to see the object that dispatched the event
+    console.log(d3.event.target);
+  }
+  
+  // We can use the `on` function in d3 to attach an event to the handler function
+  button.on("click", handleClick);
+  
+  // You can also define the click handler inline
+  button.on("click", function() {
+    console.log("Hi, a button was clicked!");
+    console.log(d3.event.target);
+  });
+  
+  // Event handlers are just normal functions that can do anything you want
+  button.on("click", function() {
+    d3.select(".giphy-me").html("<img src='https://gph.to/2Krfn0w' alt='giphy'>");
+  });
+  
+  // Input fields can trigger a change event when new text is entered.
+  inputField.on("change", function() {
+    var newText = d3.event.target.value;
+    console.log(newText);
+  });
+
+  var titles = filteredMovies.map(movies =>  movies.title);
+
+  //  Check your filtered movie titles
+  console.log(titles);
+  
+  // 4. Use the map method with the arrow function to return all the filtered movie metascores.
+  var ratings = filteredMovies.map(movies => movies.metascore);
+  
+  //  Check your filtered metascores.
+  console.log(ratings);
+
 reversedData = tabledata.map(object => object.greekSearchResults);
 reversedData.map(object => object.greekSearchResults)
 
 function init() {
 
 }
+
+function filterDate(date) {
+    return ParseInt city.Increase_from_2016 > 15000;
+}
+
+// 1. Create a custom filtering function that returns
+//  the cities with a population increase greater than 15,000.
+var filteredDates=top15Cities.filter(filterPopulation);
+// 2. Use filter() to pass the function as its argument
+
+var cities = filteredCities.map(increase => increase.city);
 
 function handleSubmit() {
     // Prevent the page from refreshing
@@ -23,8 +77,13 @@ function handleSubmit() {
   // clear the input value
   d3.select("#datetime").node().value = "";
 
+  
+
+// Check to make sure you filtered your cities correctly
+// HINT: console.log() is your friend.
+
   // Build the plot with the new stock
-  buildPlot(stock);
+  filterDate(date);
 }
 
 
