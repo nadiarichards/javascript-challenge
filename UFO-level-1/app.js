@@ -1,6 +1,19 @@
 // from data.js
 var tableData = data;
 
+function unpack(rows, index) {
+    return rows.map(function(row) {
+      return row[index];
+    });
+  }
+
+reversedData = tabledata.map(object => object.greekSearchResults);
+reversedData.map(object => object.greekSearchResults)
+
+function init() {
+
+}
+
 function handleSubmit() {
     // Prevent the page from refreshing
     d3.event.preventDefault();
@@ -8,17 +21,13 @@ function handleSubmit() {
   console.log(stock);
 
   // clear the input value
-  d3.select("#stockInput").node().value = "";
+  d3.select("#datetime").node().value = "";
 
   // Build the plot with the new stock
   buildPlot(stock);
 }
 
-function unpack(rows, index) {
-    return rows.map(function(row) {
-      return row[index];
-    });
-  }
+
 
 
 d3.json(url).then(function(data) {
