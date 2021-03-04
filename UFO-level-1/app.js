@@ -1,7 +1,20 @@
 // from data.js
 var tableData = data;
-var button = d3.select("#click-me");
-var inputField = d3.select("#input-field");
+var button = d3.select("#filter-btn");
+var inputField = d3.select("#datetime");
+var tbody = d3.select("tbody");
+
+function init() {
+
+    data.forEach((weatherReport) => {
+        var row = tbody.append("tr");
+        Object.entries(weatherReport).forEach(([key, value]) => {
+        var cell = row.append("td");
+        cell.text(value);
+        });
+    });
+}
+
 
 function unpack(rows, index) {
     return rows.map(function(row) {
@@ -53,9 +66,7 @@ function unpack(rows, index) {
 reversedData = tabledata.map(object => object.greekSearchResults);
 reversedData.map(object => object.greekSearchResults)
 
-function init() {
 
-}
 
 function filterDate(date) {
     return ParseInt city.Increase_from_2016 > 15000;
