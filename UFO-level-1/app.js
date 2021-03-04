@@ -3,13 +3,13 @@ var tableData = data;
 var button = d3.select("#filter-btn");
 var inputField = d3.select("#datetime");
 var tbody = d3.select("tbody");
-var date = tableData.map(ufo =>  ufo.datetime);
-var city = tableData.map(ufo =>  ufo.city);
-var state = tableData.map(ufo =>  ufo.state);
-var country = tableData.map(ufo =>  ufo.country);
-var shape = tableData.map(ufo =>  ufo.shape);
-var duration = tableData.map(ufo =>  ufo.ddurationMinutes);
-var comments = tableData.map(ufo =>  ufo.comments);
+var date = tableData.datetime;
+var city = tableData.city;
+var state = tableData.state;
+var country = tableData.country;
+var shape = tableData.shape;
+var duration = tableData.durationMinutes;
+var comments = tableData.comments;
 
 console.log(comments);
 
