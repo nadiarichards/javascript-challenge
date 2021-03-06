@@ -45,7 +45,7 @@ function handleSubmit() {
     };
     d3.select('input').property('value', '');
     showTable(filteredData);
-  }
+};
 
 
 // var table = d3.select("#ufo-table");
