@@ -36,6 +36,16 @@ function handleClick () {
     showTable(filteredData);
 };
 
+function handleSubmit() {
+    d3.event.preventDefault();
+    var filteredData = data;
+    var value = d3.select('input').property('value');
+    if (value){
+        filteredData=filteredData.filter(obj=>obj.datetime==value);
+    };
+    d3.select('input').property('value', '');
+    showTable(filteredData);
+  }
 
 
 // var table = d3.select("#ufo-table");
