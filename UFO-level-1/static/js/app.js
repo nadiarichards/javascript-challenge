@@ -13,8 +13,8 @@
 
 showTable(data);
 
-d3.select('button').on('click', handleClick);
-d3.select('input').on('change', handleSubmit);
+// d3.select('button').on('click', handleClick);
+d3.select('button').on('click', handleSubmit);
 
 function showTable(data) {
     d3.select('tbody').html('');
@@ -27,27 +27,28 @@ function showTable(data) {
     });
 };
 
-function handleClick () {
-    var filteredData = data;
-    var value = d3.select('input').property('value');
-    if (value){
-        filteredData=filteredData.filter(obj=>obj.datetime==value);
-    };
-    d3.select('input').property('value', '');
-    showTable(filteredData);
-};
+// function handleClick () {
+//     var filteredData = data;
+//     var value = d3.select('input').property('value');
+//     if (value){
+//         filteredData=filteredData.filter(obj=>obj.datetime==value);
+//     };
+//     d3.select('input').property('value', '');
+//     showTable(filteredData);
+// };
 
 function handleSubmit() {
-    event.preventDefault();
+    // Prevent the page from refreshing
+    d3.event.preventDefault();
+    // Select the input value from the form
     var filteredData = data;
     var value = d3.select('input').property('value');
     if (value){
         filteredData=filteredData.filter(obj=>obj.datetime==value);
     };
-    d3.select('input').property('value', '');
+    d3.select('input').node().value = "";
     showTable(filteredData);
 };
-
 
 // var table = d3.select("#ufo-table");
 //     var tbody = table.select("tbody");
