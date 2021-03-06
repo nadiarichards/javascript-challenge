@@ -14,6 +14,7 @@
 showTable(data);
 
 d3.select('button').on('click', handleClick);
+d3.select('input').on('change', handleSubmit);
 
 function showTable(data) {
     d3.select('tbody').html('');
@@ -37,7 +38,7 @@ function handleClick () {
 };
 
 function handleSubmit() {
-    d3.event.preventDefault();
+    event.preventDefault();
     var filteredData = data;
     var value = d3.select('input').property('value');
     if (value){
