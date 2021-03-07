@@ -13,8 +13,14 @@
 
 showTable(data);
 
-// d3.select('button').on('click', handleClick);
+d3.select('form').on('submit', handleSubmit);
 d3.select('button').on('click', handleSubmit);
+
+// var inputFilter = d3.select('#filter-btn');
+// var inputFilter2 = d3.select('form')
+// ​
+// inputFilter.on("click", filterTable)
+// inputFilter2.on("submit", filterTable)
 
 function showTable(data) {
     d3.select('tbody').html('');
@@ -49,6 +55,9 @@ function handleSubmit() {
     d3.select('input').node().value = "";
     showTable(filteredData);
 };
+
+
+
 
 // var table = d3.select("#ufo-table");
 //     var tbody = table.select("tbody");
