@@ -6,7 +6,7 @@ Data filtering works in both cases: when "Filter table" button is pressed, as we
 
 Please see the link to my code [here.](https://github.com/nadiarichards/javascript-challenge/blob/main/UFO-level-1/static/js/app.js) 
 
-## Menthods and languages used:
+## Methods and languages used:
 
 1. JavaScript
 2. D3 library
